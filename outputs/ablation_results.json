@@ -1,0 +1,66 @@
+{
+  "n_scenarios": 60,
+  "base_seed": 20000,
+  "sev_scale": 0.5,
+  "elapsed_s": 20514.4,
+  "conditions": {
+    "panel_zero_shot": {
+      "arch": "panel",
+      "few_shot_k": 0,
+      "sc_samples": 1,
+      "detection_f1": 0.896,
+      "classification_acc": 0.5,
+      "calls_per_window": 5,
+      "ml_classification_acc": 0.933
+    },
+    "panel_few_shot_only": {
+      "arch": "panel",
+      "few_shot_k": 6,
+      "sc_samples": 1,
+      "detection_f1": 0.99,
+      "classification_acc": 0.983,
+      "calls_per_window": 5,
+      "ml_classification_acc": 0.933
+    },
+    "panel_self_consistency": {
+      "arch": "panel",
+      "few_shot_k": 0,
+      "sc_samples": 3,
+      "detection_f1": 0.809,
+      "classification_acc": 0.483,
+      "calls_per_window": 7,
+      "ml_classification_acc": 0.933
+    },
+    "panel_both": {
+      "arch": "panel",
+      "few_shot_k": 6,
+      "sc_samples": 3,
+      "detection_f1": 1.0,
+      "classification_acc": 1.0,
+      "calls_per_window": 7,
+      "ml_classification_acc": 0.933
+    },
+    "single_zero_shot": {
+      "arch": "single",
+      "few_shot_k": 0,
+      "sc_samples": 1,
+      "detection_f1": 0.822,
+      "classification_acc": 0.4,
+      "calls_per_window": 1,
+      "ml_classification_acc": 0.933
+    },
+    "single_both": {
+      "arch": "single",
+      "few_shot_k": 6,
+      "sc_samples": 3,
+      "detection_f1": 0.99,
+      "classification_acc": 0.983,
+      "calls_per_window": 3,
+      "ml_classification_acc": 0.933
+    }
+  },
+  "readings": {
+    "technique_decomposition": "Compare panel_zero_shot vs panel_few_shot_only vs panel_self_consistency vs panel_both to attribute the classification lift to each lever.",
+    "architecture": "Compare panel_* vs single_* at matched levers. If single_both ~= panel_both at 1/5 the calls, the multi-role decomposition does not earn its cost \u2014 consistent with the 'Illusion of Multi-Agent Advantage' we cite."
+  }
+}

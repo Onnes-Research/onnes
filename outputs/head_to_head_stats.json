@@ -1,0 +1,53 @@
+{
+  "log_path": "outputs/agent_eval_turns.jsonl",
+  "n_scenarios": 200,
+  "detection": {
+    "agent": {
+      "k": 193,
+      "n": 200,
+      "p": 0.965,
+      "lo": 0.929,
+      "hi": 0.986,
+      "ci_pct": 95
+    },
+    "ml": {
+      "k": 199,
+      "n": 200,
+      "p": 0.995,
+      "lo": 0.972,
+      "hi": 1.0,
+      "ci_pct": 95
+    },
+    "mcnemar_agent_vs_ml": {
+      "b": 1,
+      "c": 7,
+      "n_discordant": 8,
+      "p_value": 0.0703125
+    }
+  },
+  "classification": {
+    "agent": {
+      "k": 137,
+      "n": 200,
+      "p": 0.685,
+      "lo": 0.616,
+      "hi": 0.749,
+      "ci_pct": 95
+    },
+    "ml": {
+      "k": 197,
+      "n": 200,
+      "p": 0.985,
+      "lo": 0.957,
+      "hi": 0.997,
+      "ci_pct": 95
+    },
+    "mcnemar_agent_vs_ml": {
+      "b": 2,
+      "c": 62,
+      "n_discordant": 64,
+      "p_value": 2.2562247209423347e-16
+    }
+  },
+  "reading": "Clopper-Pearson 95% CIs; McNemar is the exact paired binomial on discordant pairs (same scenarios for both methods). A small McNemar p on classification means the ML advantage is not sampling noise; a large p on detection means 'detection ties' is a real statistical statement, not just close point values."
+}

@@ -1,0 +1,61 @@
+{
+  "most_frequent": {
+    "detection_f1": 0.904,
+    "macro_f1": 0.051,
+    "multiclass_acc": 0.18
+  },
+  "logreg": {
+    "detection_f1": 0.889,
+    "macro_f1": 0.843,
+    "multiclass_acc": 0.825
+  },
+  "random_forest": {
+    "detection_f1": 0.997,
+    "macro_f1": 0.983,
+    "multiclass_acc": 0.985
+  },
+  "hist_gbdt": {
+    "detection_f1": 0.969,
+    "macro_f1": 0.883,
+    "multiclass_acc": 0.89
+  },
+  "threshold_rules": {
+    "detection_f1": 0.571,
+    "macro_f1": 0.173,
+    "multiclass_acc": 0.245
+  },
+  "engineered_rules": {
+    "detection_f1": 1.0,
+    "macro_f1": 0.898,
+    "multiclass_acc": 0.915
+  },
+  "_meta": {
+    "n_test": 200,
+    "sev_scale": 0.5,
+    "holdout": "by-seed (train 0.., test 10000..)",
+    "fingerprint": true,
+    "note": "engineered_baseline uses NO training labels; rate-of-change + delta pressure/flow rules"
+  },
+  "noise_robustness": [
+    {
+      "extra_noise": 0.0,
+      "engineered_macro_f1": 0.898,
+      "random_forest_macro_f1": 0.983
+    },
+    {
+      "extra_noise": 0.05,
+      "engineered_macro_f1": 0.858,
+      "random_forest_macro_f1": 0.918
+    },
+    {
+      "extra_noise": 0.1,
+      "engineered_macro_f1": 0.609,
+      "random_forest_macro_f1": 0.802
+    },
+    {
+      "extra_noise": 0.2,
+      "engineered_macro_f1": 0.101,
+      "random_forest_macro_f1": 0.701
+    }
+  ]
+}

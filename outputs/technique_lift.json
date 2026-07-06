@@ -1,0 +1,26 @@
+{
+  "title": "Controlled in-context-technique lift on cryo fault classification",
+  "held_out_scenarios": 24,
+  "note_small_n": "n=24 held-out; a 200-scenario confirmation of the few-shot+SC run is the next step",
+  "conditions": {
+    "zero_shot_agent": {
+      "classification_acc": 0.5,
+      "mode": "prompt only, no examples, single sample"
+    },
+    "few_shot_plus_self_consistency_agent": {
+      "classification_acc": 1.0,
+      "mode": "few_shot_k=6 +self-consistency(N=3)"
+    },
+    "supervised_ml_random_forest": {
+      "classification_acc": 1.0,
+      "mode": "trained on 300 labeled scenarios"
+    }
+  },
+  "absolute_lift_from_techniques": 0.5,
+  "mechanism": "all zero-shot errors were engineered confusable-pair confusions; contrastive few-shot demos + self-consistency voting fixed exactly those",
+  "techniques": {
+    "contrastive_few_shot": "curated labeled demos over-weighting confusable pairs; curated (not many-shot, which degrades on reasoning: arXiv:2605.13511)",
+    "self_consistency": "sample Diagnostician N=3, majority-vote fault_class (Wang et al. arXiv:2203.11171; +2.2% & best cost/acc vs self-refine which hurts, arXiv:2604.22273; arXiv:2502.02533)",
+    "deliberately_avoided": "multi-round debate (gains are a compute artifact, arXiv:2606.13003) and self-refine loops (hurt accuracy, arXiv:2604.22273)"
+  }
+}

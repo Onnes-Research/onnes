@@ -1,0 +1,36 @@
+{
+  "onset_min": 719.5,
+  "poll_cadence_min": 30.0,
+  "n_polls": 41,
+  "metric_note": "This is DETECTION LATENCY (first true alarm minus onset), not a physical lead time. With a 30-min poll cadence the smallest observable latency is one poll, so the value is cadence-bounded, not a property of the agent alone; a cadence/seed sweep is future work.",
+  "gates": [
+    {
+      "gate": "any",
+      "false_alarms_before_onset": 11,
+      "detection_latency_min": 29.5,
+      "true_alarms_after_onset": 24,
+      "detected": true
+    },
+    {
+      "gate": "med",
+      "false_alarms_before_onset": 6,
+      "detection_latency_min": 29.5,
+      "true_alarms_after_onset": 24,
+      "detected": true
+    },
+    {
+      "gate": "high",
+      "false_alarms_before_onset": 1,
+      "detection_latency_min": 59.5,
+      "true_alarms_after_onset": 23,
+      "detected": true
+    }
+  ],
+  "headline": {
+    "ungated_false_alarms": 11,
+    "gated_high_false_alarms": 1,
+    "gated_high_latency_min": 59.5,
+    "best_gate": "high",
+    "reading": "Requiring HIGH confidence cuts pre-onset false alarms sharply while preserving detection, because true post-onset alarms are almost all high-confidence and false pre-onset ones are mostly low/med. This is a simple, honest fix for the monitor's precision problem."
+  }
+}

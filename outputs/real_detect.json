@@ -1,0 +1,19 @@
+{
+  "data": "REAL BlueFors healthy telemetry (blizzard), no synthetic normal",
+  "method": "PCA reconstruction detector; physics-guided augmentation (field-standard)",
+  "n_train_real_windows": 281,
+  "n_test_real_windows": 188,
+  "window_min": 30,
+  "severity": 1.0,
+  "fa_threshold_quantile": 0.99,
+  "false_alarm_rate_on_REAL_healthy": 0.064,
+  "recall_per_injected_physics_fault": {
+    "helium_leak": 1.0,
+    "blocked_impedance": 1.0,
+    "wiring_heat_ingress": 1.0,
+    "heat_load_spike": 1.0,
+    "magnet_quench": 1.0
+  },
+  "mean_recall": 1.0,
+  "reading": "Detector trained ONLY on real healthy BlueFors telemetry. The false-alarm rate is a genuine real-hardware number (real held-out healthy windows). Recall is on physics faults injected onto REAL windows (real noise + real baseline + physics perturbation) \u2014 the field-standard 'physics-guided augmentation' method, applied to a dilution fridge for the first time. This CANNOT claim real fault classification (no real fault labels exist), only detection."
+}

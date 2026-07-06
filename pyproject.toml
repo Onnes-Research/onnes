@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "onnesim"
+version = "0.0.1"
+description = "OnnesSim — phenomenological dilution-refrigerator simulator emitting Bluefors/FRTMS-schema telemetry with labeled faults, for cryo-ops ML/LLM-agent research."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Onnes", email = "research@onnes.ai" }]
+keywords = ["cryogenics", "dilution-refrigerator", "quantum-computing", "simulation", "benchmark"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+
+# Runtime dependencies — kept minimal so the core simulator installs anywhere.
+dependencies = [
+    "numpy>=1.26",
+    "matplotlib>=3.7",
+]
+
+[project.optional-dependencies]
+# Classical ML baseline (scripts/ml baseline work).
+ml = ["scikit-learn>=1.3"]
+# LLM-agent backend (CryoAgent via Claude).
+llm = ["anthropic>=0.39"]
+# Google Gemini backend (CryoAgent via the google-genai SDK; second LLM backend).
+gemini = ["google-genai>=2.0"]
+# Test + development tooling.
+dev = ["pytest>=7.4"]
+
+[project.urls]
+Homepage = "https://onnes.ai"
+Repository = "https://github.com/onnes-ai/onnes-research"
+
+[tool.setuptools]
+# The importable package is the onnesim/ directory. scripts/ and tests/ are not
+# packaged (scripts are run in-tree; tests are dev-only).
+packages = ["onnesim"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+addopts = "-q"

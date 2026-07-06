@@ -1,0 +1,76 @@
+{
+  "protocol": {
+    "train_n": 300,
+    "eval_n": 200,
+    "base_seed_eval": 10000,
+    "sev_scale": 0.5,
+    "note": "same seed-addressed scenarios as the agent head-to-head"
+  },
+  "available_strong_models": {
+    "lightgbm": true,
+    "tabpfn": true
+  },
+  "models": {
+    "logreg": {
+      "macro_f1": 0.843,
+      "exact_accuracy": {
+        "k": 165,
+        "n": 200,
+        "p": 0.825,
+        "lo": 0.765,
+        "hi": 0.875,
+        "ci_pct": 95
+      },
+      "fit_predict_s": 0.0
+    },
+    "random_forest": {
+      "macro_f1": 0.983,
+      "exact_accuracy": {
+        "k": 197,
+        "n": 200,
+        "p": 0.985,
+        "lo": 0.957,
+        "hi": 0.997,
+        "ci_pct": 95
+      },
+      "fit_predict_s": 0.3
+    },
+    "hist_gbdt": {
+      "macro_f1": 0.883,
+      "exact_accuracy": {
+        "k": 178,
+        "n": 200,
+        "p": 0.89,
+        "lo": 0.838,
+        "hi": 0.93,
+        "ci_pct": 95
+      },
+      "fit_predict_s": 3.0
+    },
+    "lightgbm": {
+      "macro_f1": 0.86,
+      "exact_accuracy": {
+        "k": 173,
+        "n": 200,
+        "p": 0.865,
+        "lo": 0.81,
+        "hi": 0.909,
+        "ci_pct": 95
+      },
+      "fit_predict_s": 1.3
+    },
+    "tabpfn": {
+      "macro_f1": 0.996,
+      "exact_accuracy": {
+        "k": 199,
+        "n": 200,
+        "p": 0.995,
+        "lo": 0.972,
+        "hi": 1.0,
+        "ci_pct": 95
+      },
+      "fit_predict_s": 10.9
+    }
+  },
+  "reading": "All models share the head-to-head's exact train/eval seeds and feature pipeline, so these accuracies are directly comparable to the agent panel. CIs are Clopper-Pearson 95%."
+}

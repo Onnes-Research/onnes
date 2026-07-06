@@ -1,0 +1,214 @@
+{
+  "source": "reconstructed_from_log",
+  "log_path": "outputs/agent_eval_turns.jsonl",
+  "n_scenarios_complete": 200,
+  "n_scenarios_seen": 200,
+  "agent_turns_total": 1000,
+  "agent_panel": {
+    "score": {
+      "n": 200,
+      "detect_accuracy": 0.965,
+      "precision": 0.959,
+      "recall": 1.0,
+      "f1": 0.979,
+      "class_accuracy_on_detected": 0.655,
+      "counts": {
+        "tp": 165,
+        "fp": 7,
+        "tn": 28,
+        "fn": 0
+      }
+    },
+    "overall_multiclass_accuracy": 0.685,
+    "confusion_matrix": [
+      [
+        29,
+        4,
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        2,
+        29,
+        0,
+        0,
+        5,
+        0
+      ],
+      [
+        5,
+        0,
+        0,
+        0,
+        1,
+        23
+      ],
+      [
+        0,
+        0,
+        0,
+        36,
+        0,
+        0
+      ],
+      [
+        3,
+        16,
+        0,
+        0,
+        20,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0,
+        0,
+        23
+      ]
+    ],
+    "confusion_labels": [
+      "normal",
+      "heat_load_spike",
+      "helium_leak",
+      "magnet_quench",
+      "wiring_heat_ingress",
+      "blocked_impedance"
+    ],
+    "top_confusions": [
+      {
+        "truth": "helium_leak",
+        "pred": "blocked_impedance",
+        "count": 23
+      },
+      {
+        "truth": "wiring_heat_ingress",
+        "pred": "heat_load_spike",
+        "count": 16
+      },
+      {
+        "truth": "heat_load_spike",
+        "pred": "wiring_heat_ingress",
+        "count": 5
+      },
+      {
+        "truth": "helium_leak",
+        "pred": "normal",
+        "count": 5
+      },
+      {
+        "truth": "normal",
+        "pred": "heat_load_spike",
+        "count": 4
+      },
+      {
+        "truth": "wiring_heat_ingress",
+        "pred": "normal",
+        "count": 3
+      }
+    ]
+  },
+  "ml_random_forest": {
+    "score": {
+      "n": 200,
+      "detect_accuracy": 0.995,
+      "precision": 1.0,
+      "recall": 0.994,
+      "f1": 0.997,
+      "class_accuracy_on_detected": 0.988,
+      "counts": {
+        "tp": 164,
+        "fp": 0,
+        "tn": 35,
+        "fn": 1
+      }
+    },
+    "overall_multiclass_accuracy": 0.985,
+    "confusion_matrix": [
+      [
+        35,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        36,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        29,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        36,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        38,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        0,
+        0,
+        23
+      ]
+    ],
+    "confusion_labels": [
+      "normal",
+      "heat_load_spike",
+      "helium_leak",
+      "magnet_quench",
+      "wiring_heat_ingress",
+      "blocked_impedance"
+    ],
+    "top_confusions": [
+      {
+        "truth": "blocked_impedance",
+        "pred": "helium_leak",
+        "count": 2
+      },
+      {
+        "truth": "wiring_heat_ingress",
+        "pred": "normal",
+        "count": 1
+      }
+    ]
+  },
+  "head_to_head": {
+    "agent_detection_f1": 0.979,
+    "ml_detection_f1": 0.997,
+    "agent_classification_acc": 0.685,
+    "ml_classification_acc": 0.985
+  },
+  "interpretation": {
+    "ml_is_supervised": "random_forest trained on 300 labeled scenarios",
+    "agent_is_zero_shot": "agent panel sees only a prompt, no training labels",
+    "fair_reading": "Detection ties zero-shot; ML wins classification because it had 300 labels the agent never saw. In real fridges faults are rare and labels scarce, so zero-shot reasoning has real value. The agent's errors are the engineered confusable pairs (interpretable); ML is a black box."
+  },
+  "agent_mode": "zero-shot",
+  "n_scenarios": 200
+}

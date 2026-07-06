@@ -1,0 +1,1024 @@
+{
+  "config": {
+    "n": 600,
+    "hours": 6.0,
+    "dt_min": 5.0,
+    "test_frac": 0.3,
+    "n_train": 420,
+    "n_test": 180,
+    "fingerprint": true,
+    "fingerprint_dir": "data/real/bluefors_cryometrics_sample",
+    "holdout": "by-seed (train/test seed sets disjoint)"
+  },
+  "class_balance": {
+    "blocked_impedance": 96,
+    "heat_load_spike": 110,
+    "helium_leak": 89,
+    "magnet_quench": 104,
+    "normal": 94,
+    "wiring_heat_ingress": 107
+  },
+  "models": {
+    "most_frequent": {
+      "score": {
+        "n": 180,
+        "detect_accuracy": 0.856,
+        "precision": 0.856,
+        "recall": 1.0,
+        "f1": 0.922,
+        "class_accuracy_on_detected": 0.195,
+        "counts": {
+          "tp": 154,
+          "fp": 26,
+          "tn": 0,
+          "fn": 0
+        }
+      },
+      "overall_multiclass_accuracy": 0.167,
+      "macro_f1": 0.048,
+      "grouped_macro_f1": 0.153,
+      "per_class": {
+        "normal": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 26
+        },
+        "heat_load_spike": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 47
+        },
+        "helium_leak": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 21
+        },
+        "magnet_quench": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 28
+        },
+        "wiring_heat_ingress": {
+          "precision": 0.167,
+          "recall": 1.0,
+          "f1": 0.286,
+          "support": 30
+        },
+        "blocked_impedance": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 28
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0,
+          26,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          47,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          21,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          28,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          30,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          28,
+          0
+        ]
+      ],
+      "confusion_labels": [
+        "normal",
+        "heat_load_spike",
+        "helium_leak",
+        "magnet_quench",
+        "wiring_heat_ingress",
+        "blocked_impedance"
+      ]
+    },
+    "threshold_rules": {
+      "score": {
+        "n": 180,
+        "detect_accuracy": 0.806,
+        "precision": 1.0,
+        "recall": 0.773,
+        "f1": 0.872,
+        "class_accuracy_on_detected": 0.269,
+        "counts": {
+          "tp": 119,
+          "fp": 0,
+          "tn": 26,
+          "fn": 35
+        }
+      },
+      "overall_multiclass_accuracy": 0.322,
+      "macro_f1": 0.258,
+      "grouped_macro_f1": 0.458,
+      "per_class": {
+        "normal": {
+          "precision": 0.426,
+          "recall": 1.0,
+          "f1": 0.598,
+          "support": 26
+        },
+        "heat_load_spike": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 47
+        },
+        "helium_leak": {
+          "precision": 0.092,
+          "recall": 0.381,
+          "f1": 0.148,
+          "support": 21
+        },
+        "magnet_quench": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 28
+        },
+        "wiring_heat_ingress": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 30
+        },
+        "blocked_impedance": {
+          "precision": 0.75,
+          "recall": 0.857,
+          "f1": 0.8,
+          "support": 28
+        }
+      },
+      "confusion_matrix": [
+        [
+          26,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          47,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          0,
+          8,
+          0,
+          0,
+          8
+        ],
+        [
+          28,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          28,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          4,
+          0,
+          0,
+          24
+        ]
+      ],
+      "confusion_labels": [
+        "normal",
+        "heat_load_spike",
+        "helium_leak",
+        "magnet_quench",
+        "wiring_heat_ingress",
+        "blocked_impedance"
+      ]
+    },
+    "logreg": {
+      "score": {
+        "n": 180,
+        "detect_accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "class_accuracy_on_detected": 0.994,
+        "counts": {
+          "tp": 154,
+          "fp": 0,
+          "tn": 26,
+          "fn": 0
+        }
+      },
+      "overall_multiclass_accuracy": 0.994,
+      "macro_f1": 0.995,
+      "grouped_macro_f1": 0.996,
+      "per_class": {
+        "normal": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 26
+        },
+        "heat_load_spike": {
+          "precision": 0.979,
+          "recall": 1.0,
+          "f1": 0.989,
+          "support": 47
+        },
+        "helium_leak": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 21
+        },
+        "magnet_quench": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 28
+        },
+        "wiring_heat_ingress": {
+          "precision": 1.0,
+          "recall": 0.967,
+          "f1": 0.983,
+          "support": 30
+        },
+        "blocked_impedance": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 28
+        }
+      },
+      "confusion_matrix": [
+        [
+          26,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          47,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          21,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          28,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          29,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          28
+        ]
+      ],
+      "confusion_labels": [
+        "normal",
+        "heat_load_spike",
+        "helium_leak",
+        "magnet_quench",
+        "wiring_heat_ingress",
+        "blocked_impedance"
+      ]
+    },
+    "random_forest": {
+      "score": {
+        "n": 180,
+        "detect_accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "class_accuracy_on_detected": 1.0,
+        "counts": {
+          "tp": 154,
+          "fp": 0,
+          "tn": 26,
+          "fn": 0
+        }
+      },
+      "overall_multiclass_accuracy": 1.0,
+      "macro_f1": 1.0,
+      "grouped_macro_f1": 1.0,
+      "per_class": {
+        "normal": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 26
+        },
+        "heat_load_spike": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 47
+        },
+        "helium_leak": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 21
+        },
+        "magnet_quench": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 28
+        },
+        "wiring_heat_ingress": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 30
+        },
+        "blocked_impedance": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 28
+        }
+      },
+      "confusion_matrix": [
+        [
+          26,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          47,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          21,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          28,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          30,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          28
+        ]
+      ],
+      "confusion_labels": [
+        "normal",
+        "heat_load_spike",
+        "helium_leak",
+        "magnet_quench",
+        "wiring_heat_ingress",
+        "blocked_impedance"
+      ]
+    },
+    "hist_gbdt": {
+      "score": {
+        "n": 180,
+        "detect_accuracy": 0.994,
+        "precision": 1.0,
+        "recall": 0.994,
+        "f1": 0.997,
+        "class_accuracy_on_detected": 0.993,
+        "counts": {
+          "tp": 153,
+          "fp": 0,
+          "tn": 26,
+          "fn": 1
+        }
+      },
+      "overall_multiclass_accuracy": 0.989,
+      "macro_f1": 0.989,
+      "grouped_macro_f1": 0.987,
+      "per_class": {
+        "normal": {
+          "precision": 0.963,
+          "recall": 1.0,
+          "f1": 0.981,
+          "support": 26
+        },
+        "heat_load_spike": {
+          "precision": 1.0,
+          "recall": 0.979,
+          "f1": 0.989,
+          "support": 47
+        },
+        "helium_leak": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 21
+        },
+        "magnet_quench": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 28
+        },
+        "wiring_heat_ingress": {
+          "precision": 1.0,
+          "recall": 0.967,
+          "f1": 0.983,
+          "support": 30
+        },
+        "blocked_impedance": {
+          "precision": 0.966,
+          "recall": 1.0,
+          "f1": 0.982,
+          "support": 28
+        }
+      },
+      "confusion_matrix": [
+        [
+          26,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          46,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          21,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          28,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          29,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          28
+        ]
+      ],
+      "confusion_labels": [
+        "normal",
+        "heat_load_spike",
+        "helium_leak",
+        "magnet_quench",
+        "wiring_heat_ingress",
+        "blocked_impedance"
+      ]
+    }
+  },
+  "best_learned_model": "random_forest",
+  "top_confusions": {
+    "most_frequent": [
+      {
+        "truth": "heat_load_spike",
+        "pred": "wiring_heat_ingress",
+        "count": 47
+      },
+      {
+        "truth": "magnet_quench",
+        "pred": "wiring_heat_ingress",
+        "count": 28
+      },
+      {
+        "truth": "blocked_impedance",
+        "pred": "wiring_heat_ingress",
+        "count": 28
+      },
+      {
+        "truth": "normal",
+        "pred": "wiring_heat_ingress",
+        "count": 26
+      },
+      {
+        "truth": "helium_leak",
+        "pred": "wiring_heat_ingress",
+        "count": 21
+      }
+    ],
+    "threshold_rules": [
+      {
+        "truth": "heat_load_spike",
+        "pred": "helium_leak",
+        "count": 47
+      },
+      {
+        "truth": "magnet_quench",
+        "pred": "normal",
+        "count": 28
+      },
+      {
+        "truth": "wiring_heat_ingress",
+        "pred": "helium_leak",
+        "count": 28
+      },
+      {
+        "truth": "helium_leak",
+        "pred": "blocked_impedance",
+        "count": 8
+      },
+      {
+        "truth": "helium_leak",
+        "pred": "normal",
+        "count": 5
+      }
+    ],
+    "logreg": [
+      {
+        "truth": "wiring_heat_ingress",
+        "pred": "heat_load_spike",
+        "count": 1
+      }
+    ],
+    "random_forest": [],
+    "hist_gbdt": [
+      {
+        "truth": "heat_load_spike",
+        "pred": "blocked_impedance",
+        "count": 1
+      },
+      {
+        "truth": "wiring_heat_ingress",
+        "pred": "normal",
+        "count": 1
+      }
+    ]
+  },
+  "confusion_under_stress": {
+    "score": {
+      "n": 180,
+      "detect_accuracy": 0.933,
+      "precision": 0.928,
+      "recall": 1.0,
+      "f1": 0.963,
+      "class_accuracy_on_detected": 0.935,
+      "counts": {
+        "tp": 154,
+        "fp": 12,
+        "tn": 14,
+        "fn": 0
+      }
+    },
+    "overall_multiclass_accuracy": 0.878,
+    "macro_f1": 0.882,
+    "grouped_macro_f1": 0.874,
+    "per_class": {
+      "normal": {
+        "precision": 1.0,
+        "recall": 0.538,
+        "f1": 0.7,
+        "support": 26
+      },
+      "heat_load_spike": {
+        "precision": 1.0,
+        "recall": 0.83,
+        "f1": 0.907,
+        "support": 47
+      },
+      "helium_leak": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 21
+      },
+      "magnet_quench": {
+        "precision": 0.56,
+        "recall": 1.0,
+        "f1": 0.718,
+        "support": 28
+      },
+      "wiring_heat_ingress": {
+        "precision": 1.0,
+        "recall": 0.933,
+        "f1": 0.966,
+        "support": 30
+      },
+      "blocked_impedance": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 28
+      }
+    },
+    "confusion_matrix": [
+      [
+        14,
+        0,
+        0,
+        12,
+        0,
+        0
+      ],
+      [
+        0,
+        39,
+        0,
+        8,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        21,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        28,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2,
+        28,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        28
+      ]
+    ],
+    "confusion_labels": [
+      "normal",
+      "heat_load_spike",
+      "helium_leak",
+      "magnet_quench",
+      "wiring_heat_ingress",
+      "blocked_impedance"
+    ],
+    "noise_level": 0.1
+  },
+  "top_confusions_under_stress": [
+    {
+      "truth": "normal",
+      "pred": "magnet_quench",
+      "count": 12
+    },
+    {
+      "truth": "heat_load_spike",
+      "pred": "magnet_quench",
+      "count": 8
+    },
+    {
+      "truth": "wiring_heat_ingress",
+      "pred": "magnet_quench",
+      "count": 2
+    }
+  ],
+  "stress_test": {
+    "noise": [
+      {
+        "level": 0.0,
+        "random_forest": {
+          "detection_f1": 1.0,
+          "macro_f1": 1.0,
+          "overall_acc": 1.0
+        },
+        "hist_gbdt": {
+          "detection_f1": 0.997,
+          "macro_f1": 0.989,
+          "overall_acc": 0.989
+        }
+      },
+      {
+        "level": 0.02,
+        "random_forest": {
+          "detection_f1": 1.0,
+          "macro_f1": 1.0,
+          "overall_acc": 1.0
+        },
+        "hist_gbdt": {
+          "detection_f1": 0.96,
+          "macro_f1": 0.893,
+          "overall_acc": 0.9
+        }
+      },
+      {
+        "level": 0.05,
+        "random_forest": {
+          "detection_f1": 0.987,
+          "macro_f1": 0.966,
+          "overall_acc": 0.967
+        },
+        "hist_gbdt": {
+          "detection_f1": 0.942,
+          "macro_f1": 0.79,
+          "overall_acc": 0.794
+        }
+      },
+      {
+        "level": 0.1,
+        "random_forest": {
+          "detection_f1": 0.963,
+          "macro_f1": 0.882,
+          "overall_acc": 0.878
+        },
+        "hist_gbdt": {
+          "detection_f1": 0.93,
+          "macro_f1": 0.69,
+          "overall_acc": 0.689
+        }
+      },
+      {
+        "level": 0.2,
+        "random_forest": {
+          "detection_f1": 0.942,
+          "macro_f1": 0.744,
+          "overall_acc": 0.728
+        },
+        "hist_gbdt": {
+          "detection_f1": 0.93,
+          "macro_f1": 0.635,
+          "overall_acc": 0.628
+        }
+      }
+    ],
+    "window_frac": [
+      {
+        "level": 1.0,
+        "random_forest": {
+          "detection_f1": 1.0,
+          "macro_f1": 1.0,
+          "overall_acc": 1.0
+        },
+        "hist_gbdt": {
+          "detection_f1": 0.997,
+          "macro_f1": 0.989,
+          "overall_acc": 0.989
+        }
+      },
+      {
+        "level": 0.5,
+        "random_forest": {
+          "detection_f1": 0.706,
+          "macro_f1": 0.646,
+          "overall_acc": 0.611
+        },
+        "hist_gbdt": {
+          "detection_f1": 0.743,
+          "macro_f1": 0.613,
+          "overall_acc": 0.594
+        }
+      },
+      {
+        "level": 0.25,
+        "random_forest": {
+          "detection_f1": 0.0,
+          "macro_f1": 0.042,
+          "overall_acc": 0.144
+        },
+        "hist_gbdt": {
+          "detection_f1": 0.0,
+          "macro_f1": 0.042,
+          "overall_acc": 0.144
+        }
+      },
+      {
+        "level": 0.1,
+        "random_forest": {
+          "detection_f1": 0.0,
+          "macro_f1": 0.042,
+          "overall_acc": 0.144
+        },
+        "hist_gbdt": {
+          "detection_f1": 0.013,
+          "macro_f1": 0.049,
+          "overall_acc": 0.15
+        }
+      }
+    ],
+    "severity_scale": [
+      {
+        "level": 1.0,
+        "random_forest": {
+          "detection_f1": 1.0,
+          "macro_f1": 1.0,
+          "overall_acc": 1.0
+        },
+        "hist_gbdt": {
+          "detection_f1": 0.997,
+          "macro_f1": 0.989,
+          "overall_acc": 0.989
+        }
+      },
+      {
+        "level": 0.7,
+        "random_forest": {
+          "detection_f1": 1.0,
+          "macro_f1": 1.0,
+          "overall_acc": 1.0
+        },
+        "hist_gbdt": {
+          "detection_f1": 0.983,
+          "macro_f1": 0.939,
+          "overall_acc": 0.944
+        }
+      },
+      {
+        "level": 0.5,
+        "random_forest": {
+          "detection_f1": 0.997,
+          "macro_f1": 0.979,
+          "overall_acc": 0.983
+        },
+        "hist_gbdt": {
+          "detection_f1": 0.977,
+          "macro_f1": 0.897,
+          "overall_acc": 0.911
+        }
+      },
+      {
+        "level": 0.3,
+        "random_forest": {
+          "detection_f1": 0.863,
+          "macro_f1": 0.786,
+          "overall_acc": 0.778
+        },
+        "hist_gbdt": {
+          "detection_f1": 0.959,
+          "macro_f1": 0.752,
+          "overall_acc": 0.828
+        }
+      },
+      {
+        "level": 0.15,
+        "random_forest": {
+          "detection_f1": 0.279,
+          "macro_f1": 0.177,
+          "overall_acc": 0.228
+        },
+        "hist_gbdt": {
+          "detection_f1": 0.942,
+          "macro_f1": 0.708,
+          "overall_acc": 0.783
+        }
+      }
+    ]
+  },
+  "label_noise_robustness": {
+    "0.00": {
+      "detection_f1": 1.0,
+      "macro_f1": 1.0
+    },
+    "0.10": {
+      "detection_f1": 1.0,
+      "macro_f1": 0.993
+    },
+    "0.20": {
+      "detection_f1": 0.997,
+      "macro_f1": 0.994
+    }
+  },
+  "verdict": {
+    "best_model": "random_forest",
+    "clean_detection_f1": 1.0,
+    "clean_macro_f1": 1.0,
+    "default_setting_is_trivial": true,
+    "macro_f1_heavy_noise_0.20": 0.744,
+    "macro_f1_short_window_0.10": 0.042,
+    "macro_f1_low_severity_0.15": 0.177,
+    "worst_case_macro_f1_under_stress": 0.042,
+    "target_band": "0.75-0.85 (docs/FINDINGS.md #1)",
+    "label": "DEFAULT IS TOO EASY (clean F1 ~1.0) BUT degrades into/below the 0.75-0.85 target band under realistic stress. Ship the STRESSED configs as the real benchmark; the clean default is not a meaningful test."
+  }
+}

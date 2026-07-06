@@ -1,0 +1,34 @@
+{
+  "measured": true,
+  "roles_per_window": 5,
+  "self_consistency_samples": 3,
+  "calls_per_window": {
+    "zero_shot": 5,
+    "enhanced": 7
+  },
+  "agent_latency_zero_shot": {
+    "n": 200,
+    "mean_s": 87.5,
+    "median_s": 82.2,
+    "p90_s": 118.5,
+    "per_role_mean_s": 17.5
+  },
+  "agent_latency_enhanced": {
+    "n": 34,
+    "mean_s": 111.7,
+    "median_s": 109.1,
+    "p90_s": 135.3,
+    "per_role_mean_s": 22.3
+  },
+  "ml_random_forest": {
+    "rf_fit_s": 0.2,
+    "rf_predict_s_total": 0.035,
+    "rf_predict_ms_per_scenario": 0.18,
+    "eval_n": 200,
+    "train_n": 300
+  },
+  "ratios": {
+    "agent_vs_ml_latency_per_scenario": 486111.0,
+    "note": "The panel is ~5 LLM calls/window at ~17s each (measured); the RF predicts a window in well under a millisecond after a one-time sub-minute fit. The LLM's operational value is that it needs NO training labels, not that it is cheap. Whether the 5-role panel earns its extra calls over a single agent is tested in ablation.py."
+  }
+}

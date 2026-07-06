@@ -1,0 +1,38 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "n": 200,
+  "gemini": [
+    {
+      "label": "zero_shot",
+      "n": 200,
+      "det_f1": 1.0,
+      "cls": 0.715,
+      "ml_det_f1": 0.997,
+      "ml_cls": 0.985
+    },
+    {
+      "label": "enhanced",
+      "n": 200,
+      "det_f1": 1.0,
+      "cls": 0.995,
+      "ml_det_f1": 0.997,
+      "ml_cls": 0.985
+    }
+  ],
+  "claude_zero_shot": {
+    "label": "Claude Opus 4.8 zero-shot",
+    "n": 200,
+    "det_f1": 0.979,
+    "cls": 0.685,
+    "ml_det_f1": 0.997,
+    "ml_cls": 0.985
+  },
+  "claude_enhanced": {
+    "label": "Claude Opus 4.8 enhanced",
+    "n": 200,
+    "det_f1": 0.994,
+    "cls": 0.99,
+    "ml_det_f1": 0.997,
+    "ml_cls": 0.985
+  }
+}
